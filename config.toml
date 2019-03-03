@@ -1,10 +1,10 @@
-baseurl = "https://blog2.roamingthings.de"
+baseurl = "https://blog2.roamingthings.de/"
 languageCode = "en-us"
 Title = "roamingthings"
 # Copyright notice. This is displayer in the footer.
 copyright = "&copy; 2019 Alexander Sparkowsky"
 custom_css = "/static/css/custom.css"
-theme = "roamingthings_theme"
+theme = "hugo_theme_pickles"
 
 [params]
   paginate = 10
