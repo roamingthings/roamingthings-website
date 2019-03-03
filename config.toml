@@ -4,7 +4,7 @@ Title = "roamingthings"
 # Copyright notice. This is displayer in the footer.
 copyright = "&copy; 2019 Alexander Sparkowsky"
 custom_css = "/static/css/custom.css"
-theme = "hugo_theme_pickles"
+theme = "roamingthings_theme"
 
 [params]
   paginate = 10
