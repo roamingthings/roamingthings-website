@@ -1,0 +1,4 @@
+baseURL = "https://blog2.roamingthings.de/"
+languageCode = "en-us"
+title = "roamingthings"
+theme = "ananke"
