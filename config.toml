@@ -1,7 +1,6 @@
 baseurl = "https://roamingthings.de/"
 languageCode = "en-us"
 Title = "roamingthings"
-# Copyright notice. This is displayer in the footer.
 copyright = "&copy; 2019 Alexander Sparkowsky"
 custom_css = "/static/css/custom.css"
 theme = "hugo_theme_pickles"
@@ -40,6 +39,7 @@ theme = "hugo_theme_pickles"
   # Logo image. This is displayed ogp image.
   #logo = "/path/to/logo"
   #favicon = "/path/to/favicon"
+  custom_css = ["/css/custom.css"]
 
 [[menu.main]]
     name = "Blog"
