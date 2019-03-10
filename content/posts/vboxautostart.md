@@ -1,15 +1,20 @@
 +++
 author = "Alexander Sparkowsky"
 categories = ["linux", "virtualbox", "howto", "ubuntu"]
-date = 2019-03-08T12:00:00Z
+date = 2019-03-08
 description = "How to setup vboxautostart on Ubuntu 18.04."
 draft = false
 slug = "vboxautostart-service"
 tags = ["linux", "virtualbox", "howto", "ubuntu"]
 title = "vboxautostart Setup on Ubuntu 18.04"
-
 +++
+In this article I show how to setup VirtualBox to start a virtual machine on
+boot of an Ubuntu 18.04 system.
+
+<!--more-->
+
 ## Setup vboxautostart
+
 ```
 # set environment variables
 sudo tee -a /etc/default/virtualbox <<'EOF'
@@ -35,6 +40,7 @@ sudo reboot
 ```
 
 ## Enable autostart for Your VM
+
 ```
 VBoxManage -nologo list vms
 VM="Name_Of_Your_VM"
