@@ -29,7 +29,7 @@ From my experience creating software is not just writing code but a craft follow
 
 When working communication and creativity are key to success. Therefore my preferred way to work is characterised by
 
-- Room to be creative - I like sketching and drawing to to illustrated problems, find solutions and communicate with others
+- Room to be creative - I like sketching and drawing, stickies and markers to illustrated problems, find solutions and communicate with others
 - No silos - Especially on complex systems it's very important that everybody shares their knowledge
 - Communicate respectful and open
 - Work in an agile environment - I don't care if it's called Scrum, Kanban or 'Scrumban'
