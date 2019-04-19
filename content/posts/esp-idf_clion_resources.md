@@ -19,6 +19,6 @@ I recently learned that ESP-IDF will also allow the usage of CMake beginning fro
 
 Here are some resources I found and that I'm currently looking at:
 
-* [https://codingfield.com/en/2019/01/13/esp32-esp-idf-cmake-clion/](Codingfiled: ESP32, ESP-IDF, CMake & CLion)
-* [https://docs.espressif.com/projects/esp-idf/en/latest/get-started-cmake/macos-setup-scratch.html](ESP-IDF Documentation: Setup Toolchain for Mac OS from Scratch (CMake))
-* [https://github.com/espressif/esp-idf/tree/master/examples/build_system/cmake/idf_as_lib](GitHub: Using ESP-IDF in Custom CMake Projects)
+* [Codingfiled: ESP32, ESP-IDF, CMake & CLion](https://codingfield.com/en/2019/01/13/esp32-esp-idf-cmake-clion/)
+* [ESP-IDF Documentation: Setup Toolchain for Mac OS from Scratch (CMake)](https://docs.espressif.com/projects/esp-idf/en/latest/get-started-cmake/macos-setup-scratch.html)
+* [GitHub: Using ESP-IDF in Custom CMake Projects](https://github.com/espressif/esp-idf/tree/master/examples/build_system/cmake/idf_as_lib)
