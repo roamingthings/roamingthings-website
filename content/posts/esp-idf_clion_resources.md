@@ -22,3 +22,4 @@ Here are some resources I found and that I'm currently looking at:
 * [Codingfiled: ESP32, ESP-IDF, CMake & CLion](https://codingfield.com/en/2019/01/13/esp32-esp-idf-cmake-clion/)
 * [ESP-IDF Documentation: Setup Toolchain for Mac OS from Scratch (CMake)](https://docs.espressif.com/projects/esp-idf/en/latest/get-started-cmake/macos-setup-scratch.html)
 * [GitHub: Using ESP-IDF in Custom CMake Projects](https://github.com/espressif/esp-idf/tree/master/examples/build_system/cmake/idf_as_lib)
+* [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
