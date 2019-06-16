@@ -2,6 +2,7 @@
 title: "Workbenches"
 date: 2019-06-16T09:28:53+02:00
 draft: false
+slug: "workbenches"
 ---
 
 When trying out new technologies I often build small projects just to
