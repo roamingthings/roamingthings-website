@@ -57,6 +57,11 @@ theme = "hugo_theme_pickles"
     weight = 2
 
 [[menu.main]]
+    name = "Useful Resources"
+    url = "/useful-resources"
+    weight = 2
+
+[[menu.main]]
     name = "Contact"
     url = "/contact"
     weight = 2
