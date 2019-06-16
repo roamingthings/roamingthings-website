@@ -1,12 +1,11 @@
-+++
-author = "Alexander Sparkowsky"
-date = 2016-03-01T18:00:00Z
-description = ""
-draft = false
-slug = "imprint"
-title = "Imprint / Privacy"
-
-+++
+---
+author: "Alexander Sparkowsky"
+date: 2016-03-01T18:00:00Z
+description: ""
+draft: false
+slug: "imprint"
+title: "Imprint / Privacy"
+---
 
 Alexander Sparkowsky
 

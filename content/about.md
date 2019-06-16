@@ -1,12 +1,11 @@
-+++
-author = "Alexander Sparkowsky"
-date = 2019-03-12
-description = ""
-draft = false
-slug = "about"
-title = "About Me"
-
-+++
+---
+author: "Alexander Sparkowsky"
+date: 2019-03-12
+description: ""
+draft: false
+slug: "about"
+title: "About Me"
+---
 
 # Software Development, Agile and Mobile Technology — My passion and fascination.
 

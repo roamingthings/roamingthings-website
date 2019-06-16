@@ -1,12 +1,11 @@
-+++
-author = "Alexander Sparkowsky"
-date = 2016-03-01T18:00:00Z
-description = ""
-draft = false
-slug = "contact"
-title = "Contact"
-
-+++
+---
+author: "Alexander Sparkowsky"
+date: 2016-03-01T18:00:00Z
+description: ""
+draft: false
+slug: "contact"
+title: "Contact"
+---
 
 ### Getting in Touch
 

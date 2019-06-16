@@ -18,7 +18,7 @@ theme = "hugo_theme_pickles"
   #npm = "Your npm username"
   #codepen = "Your CodePen username"
   #dribbble = "Your Dribbble username"
-  #fivehundredpx = "Your 500px username" # 500px
+  fivehundredpx = "fischbauch"
   flickr = "fischbauch"
   #pinterest = "Your Pinterest username"
   #tumblr = "Your Tumblr username"
@@ -49,6 +49,11 @@ theme = "hugo_theme_pickles"
 [[menu.main]]
     name = "About"
     url = "/about"
+    weight = 2
+
+[[menu.main]]
+    name = "Workbenches"
+    url = "/workbenches"
     weight = 2
 
 [[menu.main]]
