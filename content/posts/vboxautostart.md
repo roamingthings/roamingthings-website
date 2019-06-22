@@ -16,6 +16,7 @@ boot of an Ubuntu 18.04 system.
 ## Setup vboxautostart
 
 ```
+sudo mkdir /etc/vobx
 # set environment variables
 sudo tee -a /etc/default/virtualbox <<'EOF'
 VBOXAUTOSTART_DB=/etc/vbox
