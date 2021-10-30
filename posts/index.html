@@ -36,6 +36,25 @@ Working on the edge between the physical and digital world.
 <h2 class="c-title p-tag-title">Posts</h2>
 <article class="c-article p-list-article">
 <header>
+<h2 class="c-title c-article__title"><a href=https://roamingthings.de/posts/sam-disable-gradle-tests/>Disable tests when using SAM with Gradle projects</a></h2>
+<p class=c-article__meta>
+Posted on
+<time datetime=2021-10-30T15:47:13+02:00>
+Oct 30, 2021
+</time>
+| 176 words
+|
+~1 min
+</p>
+</header>
+<div class=c-article__summary>
+The Serverless Application Model (SAM) allows to easily build, deploy and run serverless applications on AWS. I like the fact that SAM is able to work with Lambda functions that are written in Java and are using Gradle as build tool.
+When running sam build to (re-)build any such function, SAM will always do a gradle clean build which includes execution of tests. This makes total sense when running in a CI/CD pipeline.
+</div>
+<a href=https://roamingthings.de/posts/sam-disable-gradle-tests/ class="c-article__btn p-list-article__btn">Read more</a>
+</article>
+<article class="c-article p-list-article">
+<header>
 <h2 class="c-title c-article__title"><a href=https://roamingthings.de/posts/rpi-touchscreen-backlight/>Turning the backlight of the official Raspberry Pi Touch Screen on or off</a></h2>
 <p class=c-article__meta>
 Posted on
@@ -204,26 +223,6 @@ However when you are modelling a bi-directional relationship between to entities
 @Entity data class Child( @Id @GeneratedValue val id: Long? = null, val name: String, @ManyToOne val parent: Parent?
 </div>
 <a href=https://roamingthings.de/posts/kotlin-data-class-in-bi-directional-jpa-relations/ class="c-article__btn p-list-article__btn">Read more</a>
-</article>
-<article class="c-article p-list-article">
-<header>
-<h2 class="c-title c-article__title"><a href=https://roamingthings.de/posts/kotlin-spring-boot-and-angular-4/>Kotlin, Spring Boot and Angular 4</a></h2>
-<p class=c-article__meta>
-Posted on
-<time datetime=2017-07-02T19:15:09Z>
-Jul 2, 2017
-</time>
-| 86 words
-|
-~1 min
-</p>
-</header>
-<div class=c-article__summary>
-This weekend I have been tinkering around with Kotlin, Spring Boot and Angular 4.
-I experienced how to combine everything in a multi-project using Gradle as a build tool.
-As I&rsquo;m getting more into Kotlin I like it more and more. Especially the lack of a lot of boilerplate code is very refreshing. I still have to improve on the overall style but I will definitely use Kotlin more in the future.
-</div>
-<a href=https://roamingthings.de/posts/kotlin-spring-boot-and-angular-4/ class="c-article__btn p-list-article__btn">Read more</a>
 </article>
 <nav class="c-pagination p-pagination">
 <div class=c-pagination__ctrl>
