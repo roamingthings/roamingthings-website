@@ -2,7 +2,7 @@
 title = "Disable Gralde tests when building projects with SAM"
 author = "Alexander Sparkowsky"
 categories = ["aws"]
-date: 2021-10-30T15:47:13+02:00
+date = 2021-10-30T15:47:13+02:00
 description = ""
 draft = false
 slug = "disable-gradle-tests-on-sam-build"
