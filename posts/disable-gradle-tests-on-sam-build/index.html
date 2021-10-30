@@ -2,15 +2,15 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Turning the backlight of the official Raspberry Pi Touch Screen on or off</title>
-<meta property="og:title" content="Turning the backlight of the official Raspberry Pi Touch Screen on or off">
-<meta name=twitter:title content="Turning the backlight of the official Raspberry Pi Touch Screen on or off">
-<meta name=description content="How to turn the backlight of the official 7 inch display on/off">
-<meta property="og:description" content="How to turn the backlight of the official 7 inch display on/off">
-<meta name=twitter:description content="How to turn the backlight of the official 7 inch display on/off">
+<title>Disable Gralde tests when building projects with SAM</title>
+<meta property="og:title" content="Disable Gralde tests when building projects with SAM">
+<meta name=twitter:title content="Disable Gralde tests when building projects with SAM">
+<meta name=description content="Working on the edge between the physical and digital world.">
+<meta property="og:description" content="Working on the edge between the physical and digital world.">
+<meta name=twitter:description content="Working on the edge between the physical and digital world.">
 <meta name=author content="Alexander Sparkowsky">
 <meta property="og:site_name" content="roamingthings">
-<meta property="og:url" content="https://roamingthings.de/posts/rpi-touchscreen-backlight/">
+<meta property="og:url" content="https://roamingthings.de/posts/disable-gradle-tests-on-sam-build/">
 <meta name=twitter:card content="summary">
 <meta name=twitter:site content="@fischbauch">
 <meta name=twitter:creator content="@fischbauch">
@@ -35,42 +35,53 @@ Working on the edge between the physical and digital world.
 <main id=main class=l-main>
 <article class=p-article>
 <header>
-<h1>Turning the backlight of the official Raspberry Pi Touch Screen on or off</h1>
+<h1>Disable Gralde tests when building projects with SAM</h1>
 <div>
 <div class=c-meta>
 Posted on
-<time datetime=2019-04-14T00:00:00Z>
-Apr 14, 2019
+<time datetime=2021-10-30T15:47:13+02:00>
+Oct 30, 2021
 </time>
 |
-119 words
+176 words
 |
 ~1 min
 </div>
 </div>
-<a href=https://roamingthings.de/tags/raspberry_pi class=c-tag>raspberry_pi</a>
-<a href=https://roamingthings.de/tags/rpi class=c-tag>rpi</a>
-<a href=https://roamingthings.de/tags/lcd class=c-tag>lcd</a>
-<a href=https://roamingthings.de/tags/display class=c-tag>display</a>
+<a href=https://roamingthings.de/tags/aws class=c-tag>aws</a>
+<a href=https://roamingthings.de/tags/sam class=c-tag>sam</a>
+<a href=https://roamingthings.de/tags/cloud class=c-tag>cloud</a>
+<a href=https://roamingthings.de/tags/java class=c-tag>java</a>
+<a href=https://roamingthings.de/tags/gradle class=c-tag>gradle</a>
 </div>
 </header>
 <section id=js-article class=p-article__body>
-<p>I&rsquo;ve setup a <a href=MagicMirror>https://magicmirror.builders</a> to have some information handy when leaving my apartment. I&rsquo;m using a [https://www.raspberrypi.org/](Rasspberry Pi) with the official [https://www.raspberrypi.org/products/raspberry-pi-touch-display/](Raspberry Pi Touch Display).</p>
-<p>However I don&rsquo;t want to have the display backlight turned on all the time. Especially at night the backlight is rather annoying. In Addition I don&rsquo;t see why I should use up energy when nobody is looking at the screen.</p>
-<h2 id=turning-the-backlight-on-and-off>Turning the backlight on and off</h2>
-<p>After some research I fond that turning the display on and off can be achieved by writing 0 or 1 to a special file:</p>
-<pre tabindex=0><code>$ sudo sh -c 'echo &quot;1&quot; &gt; /sys/class/backlight/rpi_backlight/bl_power' # Turn backlight off
-$ sudo sh -c 'echo &quot;0&quot; &gt; /sys/class/backlight/rpi_backlight/bl_power' # Turn backlight on
-</code></pre>
+<p>The <a href=https://aws.amazon.com/serverless/sam/>Serverless Application Model (SAM)</a> allows to easily build, deploy and run
+serverless applications on AWS. I like the fact that SAM is able to work with Lambda functions that are written in Java
+and are using <a href=https://gradle.org/>Gradle</a> as build tool.</p>
+<p>When running <code>sam build</code> to (re-)build any such function, SAM will always do a <code>gradle clean build</code> which includes
+execution of tests. This makes total sense when running in a CI/CD pipeline. However, during development this will slow
+down my development process since all test are executed. Failing tests will also prevent sam from finishing the build.</p>
+<p>To prevent SAM from running the tests, I added a script to my <code>$HOME/.gradle/init.gradle.kts</code> file:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kotlin data-lang=kotlin>allprojects {
+    tasks.withType(Test<span style=color:#f92672>::</span><span style=color:#66d9ef>class</span>) {
+        onlyIf {
+            System.getProperty(<span style=color:#e6db74>&#34;software.amazon.aws.lambdabuilders.scratch-dir&#34;</span>) <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>
+                    <span style=color:#f92672>||</span> System.getenv(<span style=color:#e6db74>&#34;GRADLE_SAM_EXECUTE_TEST&#34;</span>) <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>
+        }
+    }
+}
+</code></pre></div><p>This works because SAM sets the system property <code>software.amazon.aws.lambdabuilders.scratch-dir</code> during build. With this script in place I don&rsquo;t have to do any special modifications to my project. I can even let SAM execute the tests by setting the environment variable <code>GRADLE_SAM_EXECUTE_TEST</code> to any value:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>GRADLE_SAM_EXECUTE_TEST<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span> sam build
+</code></pre></div>
 </section>
 <footer>
 <nav class="p-pagination c-pagination">
 <div class=c-pagination__ctrl>
 <div class=c-pagination__newer>
-<a href=https://roamingthings.de/posts/disable-gradle-tests-on-sam-build/>Newer</a>
 </div>
 <div class=c-pagination__older>
-<a href=https://roamingthings.de/posts/esp-idf-clion-resources/>Older</a>
+<a href=https://roamingthings.de/posts/rpi-touchscreen-backlight/>Older</a>
 </div>
 </div>
 </nav>
