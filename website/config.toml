@@ -1,0 +1,101 @@
+baseurl = "https://roamingthings.de/"
+languageCode = "en-us"
+Title = "roamingthings"
+copyright = "&copy; 2021 Alexander Sparkowsky"
+custom_css = "/static/css/custom.css"
+theme = "hugo_theme_pickles"
+
+[params]
+  paginate = 10
+  # Social accounts. Link to these accounts are displayed in the header and
+  # footer
+  twitter = "fischbauch"
+  #facebook = "Your Facebook username"
+  instagram = "fischbauch"
+  github = "roamingthings"
+  #gitlab = "Your GitLab username"
+  #npm = "Your npm username"
+  #codepen = "Your CodePen username"
+  #dribbble = "Your Dribbble username"
+  fivehundredpx = "fischbauch"
+  flickr = "fischbauch"
+  #pinterest = "Your Pinterest username"
+  #tumblr = "Your Tumblr username"
+  #vimeo = "Your Vimeo username"
+  #youtube = "Your YouTube username"
+  linkedin = "roamingthings"
+  # Disqus shortname
+  #disqus = ""
+  # Google Analytics API key.
+  #ga_api_key = "Your Google Analytics tracking id"
+  author = "Alexander Sparkowsky"
+  authorwebsite = "roamingthings.de"
+  avatar = "/avatar.png"
+  contact = "mailto:info@roamingthings.de"
+  bio = "Berlin based Tech Lead. I love to tinkerer and make things. Focused on enterprise applications, AWS Cloud, Agile, DDD and embedded systems."
+  # Short subtitle/tagline. This is displayed in the header.
+  subtitle = "Working on the edge between the physical and digital world."
+  # Logo image. This is displayed ogp image.
+  #logo = "/path/to/logo"
+  #favicon = "/path/to/favicon"
+  custom_css = ["/css/custom.css"]
+
+[[menu.main]]
+    name = "Blog"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 2
+
+[[menu.main]]
+    name = "Workbenches"
+    url = "/workbenches"
+    weight = 2
+
+[[menu.main]]
+    name = "Useful Resources"
+    url = "/useful-resources"
+    weight = 2
+
+[[menu.main]]
+    name = "Contact"
+    url = "/contact"
+    weight = 2
+
+[[menu.main]]
+    name = "Imprint / Privacy"
+    url = "/imprint"
+    weight = 2
+
+[[menu.main]]
+    name = "Tags"
+    url = "/tags"
+    weight = 4
+
+[related]
+  # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
+  threshold = 80
+
+  # To get stable "See also" sections we, by default, exclude newer related pages.
+  includeNewer = false
+
+  # Will lower case keywords in both queries and in the indexes.
+  toLower = false
+
+  [[related.indices]]
+  name = "keywords"
+  weight = 150
+  [[related.indices]]
+  name  = "author"
+  toLower = true
+  weight = 30
+  [[related.indices]]
+  name  = "tags"
+  weight = 100
+  [[related.indices]]
+  name  = "date"
+  weight = 10
+  pattern = "2017"
