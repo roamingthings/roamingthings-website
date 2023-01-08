@@ -12,7 +12,6 @@ Alexander Sparkowsky
 Wilseder Str. 17 
 12169 Berlin
 
-Telefon: +49 30 79403641 
 E-Mail: kontakt@roamingthings.de
 
 Bei diesem Angebot handelt es sich um ein privates Angebot.
